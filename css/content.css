@@ -1,0 +1,335 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+@font-face {
+    font-family: dmfont;
+    src: url('font.otf');
+}
+
+
+/* FANCY SCROLLBARS
+ * ------------------
+ */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px black);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px silver;
+}
+
+
+/* Centreren content
+ * --------------------
+ */
+
+.margin-top100 {
+    margin-top: 100px;
+}
+
+.compact {
+    border-radius: 25px;
+    background-color: rgba(240, 240, 240, 0.7);
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 100%;
+    -moz-transition: all 0.5s ease-in;
+    /* WebKit */
+    -webkit-transition: all 0.5s ease-in;
+    /* Opera */
+    -o-transition: all 0.5s ease-in;
+    /* Standard */
+    transition: all 0.5s ease-in;
+}
+
+@media (min-width: 768px) {
+    .compact {
+        border-radius: 25px;
+        max-width: 85%;
+        margin: 0 auto -moz-transition: all 0.5s ease-in;
+        /* WebKit */
+        -webkit-transition: all 0.5s ease-in;
+        /* Opera */
+        -o-transition: all 0.5s ease-in;
+        /* Standard */
+        transition: all 0.5s ease-in;
+    }
+}
+
+@media (min-width: 1400px) {
+    .compact {
+        border-radius: 25px;
+        max-width: 70%;
+        margin: 0 auto -moz-transition: all 0.5s ease-in;
+        /* WebKit */
+        -webkit-transition: all 0.5s ease-in;
+        /* Opera */
+        -o-transition: all 0.5s ease-in;
+        /* Standard */
+        transition: all 0.5s ease-in;
+    }
+}
+
+@media (min-width: 1700px) {
+    .compact {
+        border-radius: 25px;
+        max-width: 55%;
+        margin: 0 auto -moz-transition: all 0.5s ease-in;
+        /* WebKit */
+        -webkit-transition: all 0.5s ease-in;
+        /* Opera */
+        -o-transition: all 0.5s ease-in;
+        /* Standard */
+        transition: all 0.5s ease-in;
+    }
+}
+
+.compact-push-down {
+    margin-top: 40px !important;
+}
+
+.countdownTimer {
+    z-index: 10000;
+    font-family: dmfont, "Century Gothic", "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+    text-transform: uppercase;
+    text-align: center;
+    color: #48B49A;
+}
+
+.title {
+    z-index: 10000;
+    font-family: dmfont, "Century Gothic", "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+    text-transform: uppercase;
+    text-align: center;
+    color: #48B49A !important;
+}
+
+@media (max-width: 2000px) {
+    .title,
+    .countdownTimer {
+        font-size: 70px;
+    }
+    .banner-title {
+        height: 100px;
+    }
+    .banner-countdown {
+        height: 100px;
+        bottom: 100px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .title,
+    .countdownTimer {
+        font-size: 70px;
+    }
+    .banner-title {
+        height: 100px;
+    }
+    .banner-countdown {
+        height: 100px;
+        bottom: 100px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .title,
+    .countdownTimer {
+        font-size: 60px;
+    }
+    .banner-title {
+        height: 80px;
+    }
+    .banner-countdown {
+        height: 80px;
+        bottom: 80px;
+    }
+}
+
+@media (max-width: 800px) {
+    .title,
+    .countdownTimer {
+        font-size: 50px;
+    }
+    .banner-title {
+        height: 70px;
+    }
+    .banner-countdown {
+        height: 70px;
+        bottom: 70px;
+    }
+}
+
+@media (max-width: 600px) {
+    .title,
+    .countdownTimer {
+        font-size: 40px;
+    }
+    .banner-title {
+        height: 60px;
+    }
+    .banner-countdown {
+        height: 60px;
+        bottom: 60px;
+    }
+}
+
+@media (max-width: 500px) {
+    .title,
+    .countdownTimer {
+        font-size: 30px;
+    }
+    .banner-title {
+        height: 50px;
+    }
+    .banner-countdown {
+        height: 50px;
+        bottom: 50px;
+    }
+}
+
+@media (max-width: 400px) {
+    .title,
+    .countdownTimer {
+        font-size: 20px;
+    }
+    .banner-title {
+        height: 35px;
+    }
+    .banner-countdown {
+        height: 35px;
+        bottom: 35px;
+    }
+}
+
+.banner-title {
+    background-color: rgba(0, 0, 0, 08) !important;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+}
+
+.banner-lijst {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    width: 100%;
+    position: absolute;
+    bottom: 600px;
+}
+
+.banner-countdown {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    width: 100%;
+    position: absolute;
+}
+
+.default-font {
+    font-family: dmfont, "Century Gothic", "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+    font-size: 18px;
+    color: #48B49A;
+}
+
+@media (min-width: 1400px) {
+    .default-font {
+        font-family: dmfont, "Century Gothic", "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+        font-size: 25px;
+        color: #48B49A;
+    }
+}
+
+.lijst {
+    clear: both;
+    position: absolute;
+    top: 30px;
+    left: 500px;
+}
+
+.lijstLink {
+    font-family: dmfont, "Century Gothic", "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+    font-size: 75px;
+    text-shadow: 2px 2px #000000;
+    text-align: center;
+    color: maroon !important;
+}
+
+li {
+    list-style: none;
+}
+
+input[type=checkbox] {
+    /* Double-sized Checkboxes */
+    -ms-transform: scale(2);
+    /* IE */
+    -moz-transform: scale(2);
+    /* FF */
+    -webkit-transform: scale(2);
+    /* Safari and Chrome */
+    -o-transform: scale(2);
+    /* Opera */
+    padding: 20px;
+    margin-right: 10px;
+}
+
+#banner_area {
+    min-width: 100%;
+}
+
+#banner_area img {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#banner_area img:first-child {
+    display: block;
+}
+
+.slideimg {
+    width: 100%;
+    height: 100%
+}
+
+.DM {
+    color: #35937E !important;
+}
+
+.centerContainer {
+    width: 100%;
+}
+
+.center {
+    width: 10%;
+    display: table;
+    margin: 0px auto;
+}
+
+.loginPass {
+    height: 40px;
+    width: 400px;
+    font-family: dmfont;
+    font-size: 40px;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+}
+
+.loginButton {
+    min-width: 200px !important;
+    font-family: dmfont;
+    font-size: 40px;
+    border: none;
+    color: white;
+    background-color: black;
+}
