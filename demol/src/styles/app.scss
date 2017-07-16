@@ -1,0 +1,35 @@
+@import 'src/styles/_variables.scss';
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'Knockout';
+}
+
+.page-container {
+    height: 100vh;
+    margin: 0 -15px;
+
+    .page {
+        height: 100%;
+
+        &.page-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page-icon {
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            width: 20%;
+            height: 20%;
+            background-image: url(/assets/images/logo.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right top;
+        }
+    }
+}

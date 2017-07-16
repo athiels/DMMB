@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
+import './rxjs-operators.ts';
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'dmmb-app-root',
+    templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'app works!';
 }

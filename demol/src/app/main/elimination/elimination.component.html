@@ -1,0 +1,13 @@
+<div class="page page-center">
+    <i class="page-icon"></i>
+    <form>
+        <div class="form-group">
+            <label>Naam: </label>
+            <input type="text"
+                   name="name"
+                   autocomplete="off"
+                   [(ngModel)]="name"
+                   (keyup.enter)="onEnterName()">
+        </div>
+    </form>
+</div>

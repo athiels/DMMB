@@ -1,0 +1,72 @@
+{
+    "rules": {
+        "trailing-comma": false,
+        "no-conditional-assignment": true,
+        "no-console": false,
+        "no-constant-condition": true,
+        "no-control-regex": true,
+        "no-debugger": false,
+        "no-duplicate-case": true,
+        "no-empty": false,
+        "no-empty-character-class": true,
+        "no-ex-assign": true,
+        "no-extra-boolean-cast": true,
+        "no-extra-semi": false,
+        "no-inner-declarations": true,
+        "no-invalid-regexp": true,
+        "no-irregular-whitespace": false,
+        "no-regex-spaces": true,
+        "no-sparse-arrays": true,
+        "no-unexpected-multiline": true,
+        "use-isnan": true,
+        "valid-jsdoc": false,
+        "valid-typeof": false,
+        "curly": true,
+        "switch-default": true,
+        "triple-equals": true,
+        "forin": false,
+        "no-arg": true,
+        "no-eval": true,
+        "no-switch-case-fall-through": true,
+        "no-multi-spaces": true,
+        "no-duplicate-variable": true,
+        "no-unused-expression": true,
+        "no-unused-variable": true,
+        "radix": true,
+        "no-shadowed-variable": true,
+        "no-use-before-declare": true,
+        "handle-callback-err": false,
+        "array-bracket-spacing": false,
+        "block-spacing": true,
+        "brace-style": [
+            true,
+            "1tbs",
+            {
+                "allowSingleLine": true
+            }
+        ],
+        "variable-name": [
+            true,
+            "check-format",
+            "allow-leading-underscore",
+            "ban-keywords"
+        ],
+        "indent": [
+            true,
+            "spaces"
+        ],
+        "max-line-length": false,
+        "max-file-line-count": [
+            true,
+            400
+        ],
+        "no-consecutive-blank-lines": false,
+        "no-trailing-whitespace": true,
+        "object-curly-spacing": "always",
+        "one-variable-per-declaration": true,
+        "quotemark": "single",
+        "semicolon": true,
+        "no-var-keyword": true,
+        "only-arrow-functions": false
+    }
+}

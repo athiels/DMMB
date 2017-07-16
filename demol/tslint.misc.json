@@ -1,0 +1,13 @@
+{
+    "rules": {
+        "camel-case-local-functions": false,
+        "class-method-newlines": true,
+        "declare-class-methods-after-use": false,
+        "prefer-es6-imports": false,
+        "prefer-or-operator-over-ternary": true,
+        "sort-imports": false,
+        "no-property-initializers": false,
+        "no-braces-for-single-line-arrow-functions": true,
+        "no-unnecessary-parens-for-arrow-function-arguments": true
+    }
+}
