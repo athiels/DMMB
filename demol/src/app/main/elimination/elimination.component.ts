@@ -5,8 +5,7 @@ import { EliminationService } from './elimination.service';
 
 @Component({
     selector: 'dmmb-elimination',
-    templateUrl: 'elimination.component.html',
-    styleUrls: ['elimination.component.scss']
+    templateUrl: 'elimination.component.html'
 })
 
 export class EliminationComponent {
