@@ -9,6 +9,11 @@ body {
     src: url('font.otf');
 }
 
+@font-face {
+    font-family: lijstfont;
+    src: url('OCRAEXT.ttf');
+}
+
 
 /* FANCY SCROLLBARS
  * ------------------
@@ -99,167 +104,31 @@ body {
     margin-top: 40px !important;
 }
 
-.countdownTimer {
-    z-index: 10000;
-    font-family: dmfont, "Century Gothic", "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
-    text-transform: uppercase;
-    text-align: center;
-    color: #48B49A;
-}
-
-.title {
-    z-index: 10000;
-    font-family: dmfont, "Century Gothic", "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
-    text-transform: uppercase;
-    text-align: center;
-    color: #48B49A !important;
-}
-
-@media (max-width: 2000px) {
-    .title,
-    .countdownTimer {
-        font-size: 70px;
-    }
-    .banner-title {
-        height: 100px;
-    }
-    .banner-countdown {
-        height: 100px;
-        bottom: 100px;
-    }
-}
-
-@media (max-width: 1400px) {
-    .title,
-    .countdownTimer {
-        font-size: 70px;
-    }
-    .banner-title {
-        height: 100px;
-    }
-    .banner-countdown {
-        height: 100px;
-        bottom: 100px;
-    }
-}
-
-@media (max-width: 1000px) {
-    .title,
-    .countdownTimer {
-        font-size: 60px;
-    }
-    .banner-title {
-        height: 80px;
-    }
-    .banner-countdown {
-        height: 80px;
-        bottom: 80px;
-    }
-}
-
-@media (max-width: 800px) {
-    .title,
-    .countdownTimer {
-        font-size: 50px;
-    }
-    .banner-title {
-        height: 70px;
-    }
-    .banner-countdown {
-        height: 70px;
-        bottom: 70px;
-    }
-}
-
-@media (max-width: 600px) {
-    .title,
-    .countdownTimer {
-        font-size: 40px;
-    }
-    .banner-title {
-        height: 60px;
-    }
-    .banner-countdown {
-        height: 60px;
-        bottom: 60px;
-    }
-}
-
-@media (max-width: 500px) {
-    .title,
-    .countdownTimer {
-        font-size: 30px;
-    }
-    .banner-title {
-        height: 50px;
-    }
-    .banner-countdown {
-        height: 50px;
-        bottom: 50px;
-    }
-}
-
-@media (max-width: 400px) {
-    .title,
-    .countdownTimer {
-        font-size: 20px;
-    }
-    .banner-title {
-        height: 35px;
-    }
-    .banner-countdown {
-        height: 35px;
-        bottom: 35px;
-    }
-}
-
-.banner-title {
-    background-color: rgba(0, 0, 0, 08) !important;
-    width: 100%;
-    position: absolute;
-    bottom: 0px;
-}
-
-.banner-lijst {
-    background-color: rgba(0, 0, 0, 0.8) !important;
-    width: 100%;
-    position: absolute;
-    bottom: 600px;
-}
-
-.banner-countdown {
-    background-color: rgba(0, 0, 0, 0.8) !important;
-    width: 100%;
-    position: absolute;
-}
-
 .default-font {
-    font-family: dmfont, "Century Gothic", "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
-    font-size: 18px;
-    color: #48B49A;
+    font-family: lijstfont, "Century Gothic", "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+    font-size: 25px;
+    color: black;
 }
 
-@media (min-width: 1400px) {
-    .default-font {
-        font-family: dmfont, "Century Gothic", "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
-        font-size: 25px;
-        color: #48B49A;
+.homeFont {
+    font-family: dmfont, "Century Gothic", "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+    font-size: 100px;
+    font-size-adjust: auto;
+    color: white;
+    text-shadow: 2px 2px #000;
+    text-align: center
+}
+
+@media (max-width: 1200px) {
+    .homeFont {
+        font-size: 10vw;
     }
 }
 
-.lijst {
-    clear: both;
+.absContainer {
     position: absolute;
-    top: 30px;
-    left: 500px;
-}
-
-.lijstLink {
-    font-family: dmfont, "Century Gothic", "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
-    font-size: 75px;
-    text-shadow: 2px 2px #000000;
-    text-align: center;
-    color: maroon !important;
+    height: 300px;
+    width: 100%;
 }
 
 li {
@@ -309,15 +178,26 @@ input[type=checkbox] {
 }
 
 .center {
-    width: 10%;
+    width: 30%;
     display: table;
     margin: 0px auto;
 }
 
+.linklogo {
+    width: 20%;
+    height: 20%;
+}
+
+.dmlogo {
+    min-height: 300px;
+    min-width: 300px;
+    width: 35vw;
+    height: auto;
+}
+
 .loginPass {
-    height: 40px;
     width: 400px;
-    font-family: dmfont;
+    font-family: lijstfont;
     font-size: 40px;
     border: 1px solid white;
     border-radius: 10px;
@@ -326,10 +206,17 @@ input[type=checkbox] {
 }
 
 .loginButton {
-    min-width: 200px !important;
-    font-family: dmfont;
+    font-family: lijstfont;
     font-size: 40px;
-    border: none;
     color: white;
     background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.loginButton:hover {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
 }

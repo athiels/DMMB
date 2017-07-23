@@ -1,10 +1,26 @@
 const express = require('express');
 const router = express.Router();
+var questionRound;
+getQuestionRound();
 
+function getQuestionRound() {
+    var fs = require('fs');
+    var obj;
+    fs.readFile('QuestionFile/QuestionRound.json', 'utf8', function (err, data) {
+        if (err) throw err;
+        obj = JSON.parse(data);
+        console.log('Started server for questionroud ' + obj.round);
+        questionRound = obj;
+    });
+}
+router.get('/questionRound', function (req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(questionRound);
+});
 router.get('/questions', function (req, res) {
     var fs = require('fs');
     var obj;
-    fs.readFile('QuestionFile/QuestionFile.json', 'utf8', function (err, data) {
+    fs.readFile('QuestionFile/QuestionFile' + questionRound.round + '.json', 'utf8', function (err, data) {
         if (err) throw err;
         obj = JSON.parse(data);
         //console.log(obj);
@@ -12,7 +28,6 @@ router.get('/questions', function (req, res) {
         res.send(obj);
     });
 });
-
 router.post('/responses', function (req, res) {
     //console.log(req.body);
     var resp = req.body;
@@ -32,7 +47,6 @@ router.post('/responses', function (req, res) {
     fs.writeFile("ResponseFiles/" + name + questionsRound + '.json', json, 'utf8');
     res.status(200).send();
 });
-
 router.get('/elimination', function (req, res) {
     var fs = require('fs');
     var obj;
@@ -44,5 +58,4 @@ router.get('/elimination', function (req, res) {
         res.send(obj);
     });
 });
-
 module.exports = router;
