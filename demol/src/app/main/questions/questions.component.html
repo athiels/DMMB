@@ -1,3 +1,5 @@
 <div class="page page-fade">
     <router-outlet></router-outlet>
+    <button *ngIf="started" (click)="next()">Volgende</button>
+    <button *ngIf="!started" (click)="start()">Start</button>
 </div>

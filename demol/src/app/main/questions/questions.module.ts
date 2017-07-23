@@ -1,3 +1,5 @@
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
@@ -9,6 +11,8 @@ import { StartComponent } from './start/start.component';
 
 @NgModule({
     imports: [
+        CommonModule,
+        FormsModule,
         RouterModule
     ],
     exports: [],
@@ -16,7 +20,6 @@ import { StartComponent } from './start/start.component';
         QuestionsComponent,
         QuestionComponent,
         StartComponent
-    ],
-    providers: [QuestionsService],
+    ]
 })
 export class QuestionsModule { }

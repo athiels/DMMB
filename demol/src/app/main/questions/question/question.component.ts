@@ -1,6 +1,8 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { Question } from '../question.model';
+import { QuestionsService } from '../questions.service';
 
 @Component({
     selector: 'dmmb-question',
@@ -9,7 +11,10 @@ import { Question } from '../question.model';
 
 export class QuestionComponent {
 
-    private question: Question;
+    question: Question = Question.empty();
 
-    constructor() { }
+    constructor(private route: ActivatedRoute,
+        private questionsService: QuestionsService) {
+            this.question = this.questionsService.getQuestion(0);
+    }
 }

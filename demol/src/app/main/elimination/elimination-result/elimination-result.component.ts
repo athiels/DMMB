@@ -25,7 +25,7 @@ export class EliminationResultComponent implements OnInit {
     constructor(private route: ActivatedRoute,
         private router: Router) { }
 
-    ngOnInit(): void {
+    ngOnInit() {
         const eliminated = JSON.parse(this.route.snapshot.params['eliminated']);
         this.animate(eliminated);
     }
