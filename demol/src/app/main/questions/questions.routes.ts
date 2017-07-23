@@ -1,19 +1,36 @@
 import { Route, Routes } from '@angular/router';
 
 import { QuestionsComponent } from './questions.component';
+import { QuestionComponent } from './question/question.component';
+import { StartComponent } from './start/start.component';
 import { UserLoggedInGuard } from '../user/user-logged-in-guard.service';
 
 export class QuestionsRoutes {
 
     static redirect: Route = {
         path: '',
-        redirectTo: 'questions',
+        redirectTo: 'questions/start',
         pathMatch: 'full'
     };
 
     static default: Route = {
         path: 'questions',
         component: QuestionsComponent,
+        children: [
+            {
+                path: '',
+                redirectTo: 'start',
+                pathMatch: 'full'
+            },
+            {
+                path: 'start',
+                component: StartComponent
+            },
+            {
+                path: 'question/:id',
+                component: QuestionComponent
+            }
+        ],
         canActivate: [UserLoggedInGuard]
     };
 

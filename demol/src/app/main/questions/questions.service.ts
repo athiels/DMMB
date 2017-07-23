@@ -17,6 +17,8 @@ export class QuestionsService {
 
     private mapQuestions = res => {
         const questions = res.json();
-        return _.map(questions, question => Question.fromDto(question));
+        return _.map(questions, question => {
+            return Question.fromDto(question);
+        });
     }
 }

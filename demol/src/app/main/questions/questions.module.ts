@@ -1,14 +1,21 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { Question } from './question.model';
+import { QuestionComponent } from './question/question.component';
 import { QuestionsComponent } from './questions.component';
 import { QuestionsService } from './questions.service';
+import { StartComponent } from './start/start.component';
 
 @NgModule({
-    imports: [],
+    imports: [
+        RouterModule
+    ],
     exports: [],
     declarations: [
-        QuestionsComponent
+        QuestionsComponent,
+        QuestionComponent,
+        StartComponent
     ],
     providers: [QuestionsService],
 })

@@ -8,7 +8,7 @@ export class Question {
         let question = new Question();
 
         question.question = dto.question;
-        question.answers = dto.answers;
+        question.answers = dto.responses;
 
         return question;
     }

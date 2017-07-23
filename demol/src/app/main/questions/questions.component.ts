@@ -18,7 +18,6 @@ export class QuestionsComponent implements OnInit {
         this.questionsService.getQuestions().subscribe(
             (questions) => {
                 this.questions = questions;
-                console.log(this.questions);
             }
         )
     }
