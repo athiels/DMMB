@@ -15,9 +15,8 @@ export class EliminationComponent {
 
     onEnterName(name) {
         this.eliminationService.getIsPlayerEliminated(name).subscribe(
-            (eliminated: string[]) => {
-                const isEliminated = eliminated.indexOf(name) !== -1;
-                this.router.navigate(['elimination/result', { eliminated: isEliminated }]);
+            (eliminated) => {
+                this.router.navigate(['elimination/result', { eliminated: eliminated }]);
             }
         )
     }

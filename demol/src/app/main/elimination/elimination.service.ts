@@ -1,7 +1,3 @@
-import * as _ from 'lodash';
-
-import { Observable } from 'rxjs/Rx';
-
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
@@ -13,5 +9,6 @@ export class EliminationService {
     getIsPlayerEliminated(name) {
         return this.http.get('/api/elimination')
             .map(res => res.json())
+            .map(eliminated => eliminated.indexOf(name) !== -1);
     }
 }
