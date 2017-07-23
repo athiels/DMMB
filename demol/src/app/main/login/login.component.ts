@@ -9,9 +9,7 @@ import { Router } from '@angular/router';
 
 export class LoginComponent {
 
-    name = '';
-
     constructor() { }
 
-    login() {}
+    login(name) {}
 }

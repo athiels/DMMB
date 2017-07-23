@@ -2,12 +2,11 @@
     <form>
         <div class="form-group row">
             <label class="col-12">Naam: </label>
-            <input type="text"
-                   name="name"
+            <input #name
+                   type="text"
                    class="col-12"
                    autocomplete="off"
-                   [(ngModel)]="name"
-                   (keyup.enter)="login()">
+                   (keyup.enter)="login(name.value)">
         </div>
     </form>
 </div>

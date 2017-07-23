@@ -11,7 +11,7 @@ export class EliminationService {
     constructor(private http: Http) { }
 
     getIsPlayerEliminated(name) {
-        return this.http.get('./../QuestionFile/QuestionFile.json')
+        return this.http.get('/api/elimination')
             .map(res => res.json())
     }
 }

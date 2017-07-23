@@ -3,11 +3,10 @@
     <form>
         <div class="form-group">
             <label>Naam: </label>
-            <input type="text"
-                   name="name"
+            <input #name
+                   type="text"
                    autocomplete="off"
-                   [(ngModel)]="name"
-                   (keyup.enter)="onEnterName()">
+                   (keyup.enter)="onEnterName(name.value)">
         </div>
     </form>
 </div>
