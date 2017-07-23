@@ -6,6 +6,6 @@ export class UserService {
     constructor() { }
 
     isUserAvailable() {
-        return false;
+        return true;
     }
 }

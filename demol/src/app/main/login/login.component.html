@@ -1,3 +1,13 @@
-<div>
-    Login
+<div class="page page-fade">
+    <form>
+        <div class="form-group row">
+            <label class="col-12">Naam: </label>
+            <input type="text"
+                   name="name"
+                   class="col-12"
+                   autocomplete="off"
+                   [(ngModel)]="name"
+                   (keyup.enter)="onEnterName()">
+        </div>
+    </form>
 </div>
