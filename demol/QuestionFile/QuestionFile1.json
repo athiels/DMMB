@@ -1,0 +1,12 @@
+{
+    "questions": [
+        {
+            "question": "De mol is een"
+            , "responses": ["Man", "Vrouw"]
+		}
+        , {
+            "question": "Als hoeveelste is de mol de AnimalSelfie gaan trekken?"
+            , "responses": ["Eerste", "Tweede", "Derde", "Vierde", "Vijfde", "Zesde", "Zevende", "Achtste"]
+		}
+	]
+}

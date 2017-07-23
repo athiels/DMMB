@@ -28,14 +28,13 @@
 </head>
 
 <body>
-    <div id="banner_area"> <img class="active slideimg" src="../images/1.JPG"> <img class="slideimg" src="../images/2.JPG"> <img class="slideimg" src="../images/3.JPG"> <img class="slideimg" src="../images/4.JPG"> <img class="slideimg" src="../images/5.JPG"> <img class="slideimg" src="../images/6.JPG"> <img class="slideimg" src="../images/7.JPG"> <img class="slideimg" src="../images/8.JPG"> <img class="slideimg" src="../images/9.JPG"> <img class="slideimg" src="../images/10.JPG"> <img class="slideimg" src="../images/11.JPG"> <img class="slideimg" src="../images/12.JPG"> </div>
-
-    <div class="banner-title title" style="display:none"> <span>Ch<span class="DM">a</span>moni<span class="DM">x</span> MMX<span class="DM">V</span>II <span class="DM">!</span></span>
-    </div>
-    <div class="banner-title title"><span> Chamonix 2017</span>
-    </div>
-    <div class="banner-countdown">
-        <div id="clockdiv" class="countdownTimer"> <span class="days"></span><span> D - </span><span class="hours"></span><span> H - </span><span class="minutes"></span><span> M - </span><span class="seconds"> </span><span> S </span> </div>
+    <div id="banner_area"> <img class="active slideimg" src="../images/1.JPG"> <img class="slideimg" src="../images/2.JPG"> <img class="slideimg" src="../images/3.JPG"> <img class="slideimg" src="../images/4.JPG"> <img class="slideimg" src="../images/5.JPG"> <img class="slideimg" src="../images/6.JPG"> <img class="slideimg" src="../images/7.JPG"> <img class="slideimg" src="../images/8.JPG"> </div>
+    <div class="absContainer">
+        <div class="homeFont"><span>CHAMONIX 2017</span> </div>
+        <div class="homeFont">
+            <div id="clockdiv" class="countdownTimer"> <span class="days"></span><span> D - </span><span class="hours"></span><span> H - </span><span class="minutes"></span><span> M - </span><span class="seconds"> </span><span> S </span> </div>
+        </div>
+        <div id="lijstLink" class="homeFont"> <a href="lijst.html">WAT NEEM IK MEE?</a> </div>
     </div>
 </body>
 <script>
@@ -74,12 +73,16 @@
         updateClock();
         var timeinterval = setInterval(updateClock, 1000);
     }
-    var deadline = new Date("August 7, 2017 10:00:00");
+    var deadline = new Date("August 13, 2016 00:00:00");
     if (Date.now() < deadline) {
         initializeClock('clockdiv', deadline);
     }
     else {
-        document.getElementById("clockdiv").innerHTML = '<a href="dmmb.html">#DMMB!</a>'
+        document.getElementById("clockdiv").innerHTML = '<a href="dmmb.html"><img class="linklogo" src="../images/Logo_Pasvraag.png"></a>'
+        div = document.getElementById("lijstLink");
+        while (div.firstChild) {
+            div.removeChild(div.firstChild);
+        }
     }
 </script>
 
