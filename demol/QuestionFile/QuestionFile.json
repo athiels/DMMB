@@ -1,0 +1,11 @@
+{
+    "0": {
+        "Qusetion": "De mol is een"
+        , "Responses": ["Man", "Vrouw"]
+    }
+    , "1": {
+        "Qusetion": "Als hoeveelste is de mol de AnimalSelfie gaan trekken?"
+        , "Responses": ["Eerste", "Tweede", "Derde", "Vierde", "Vijfde", "Zesde", "Zevende", "Achtste"]
+    }
+    , "Vragenronde": "1"
+}
