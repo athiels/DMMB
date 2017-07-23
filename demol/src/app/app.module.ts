@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { LoginModule } from './main/login/login.module';
 import { MainModule } from 'app/main/main.module';
 import { EliminationModule } from 'app/main/elimination/elimination.module';
+import { QuestionsModule } from './main/questions/questions.module';
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import { EliminationModule } from 'app/main/elimination/elimination.module';
         MainModule,
         EliminationModule,
         LoginModule,
+        QuestionsModule,
         AppRoutingModule
     ],
     providers: [],

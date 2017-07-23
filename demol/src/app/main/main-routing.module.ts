@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { MainComponent } from 'app/main/main.component';
 import { EliminationRoutes } from 'app/main/elimination/elimination.routes';
 import { LoginRoutes } from "app/main/login/login.routes";
+import { QuestionsRoutes } from './questions/questions.routes';
 
 @NgModule({
     imports: [
@@ -14,6 +15,7 @@ import { LoginRoutes } from "app/main/login/login.routes";
                 children: [
                     ...EliminationRoutes.routes,
                     ...LoginRoutes.routes,
+                    ...QuestionsRoutes.routes
                 ]
             }
         ])

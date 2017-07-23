@@ -5,7 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main.component';
 import { UserService } from './user/user.service';
-import { UserLoggedInGuard } from "app/main/user/user-logged-in-guard.service";
+import { UserAdminGuard } from './user/user-admin-guard.service';
+import { UserLoggedInGuard } from './user/user-logged-in-guard.service';
+import { UserNotLoggedInGuard } from './user/user-not-logged-in-guard.service';
 
 @NgModule({
     imports: [
@@ -18,7 +20,9 @@ import { UserLoggedInGuard } from "app/main/user/user-logged-in-guard.service";
     ],
     providers: [
         UserService,
-        UserLoggedInGuard
+        UserAdminGuard,
+        UserLoggedInGuard,
+        UserNotLoggedInGuard
     ]
 })
 export class MainModule { }

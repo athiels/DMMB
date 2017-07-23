@@ -18,6 +18,7 @@ export class EliminationComponent {
     onEnterName() {
         this.eliminationService.getIsPlayerEliminated(name).subscribe(
             eliminated => {
+                console.log(eliminated);
                 this.router.navigate(['elimination/result', { eliminated: eliminated }]);
             }
         )
