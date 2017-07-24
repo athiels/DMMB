@@ -1,6 +1,14 @@
-<div>
+<h1 class="title">
     {{question.question}}
-</div>
+</h1>
 <div>
-    {{question.answers}}
+    <form>
+        <div class="row" *ngFor="let a of question.answers; let i = index">
+            <div class="col-{{columnSize}}"
+                (click)="select(i)">
+                <h3 [class.selected]="isSelected(i)">{{a}}</h3>
+            </div>
+        </div>
+        <h3 class="button" (click)="next()" *ngIf="hasSelection">VOLGENDE</h3>
+    </form>
 </div>

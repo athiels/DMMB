@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main.component';
+import { QuestionsStartedGuard } from './questions/questions-started-guard.service';
 import { UserService } from './user/user.service';
 import { UserAdminGuard } from './user/user-admin-guard.service';
 import { UserLoggedInGuard } from './user/user-logged-in-guard.service';
@@ -22,7 +23,8 @@ import { UserNotLoggedInGuard } from './user/user-not-logged-in-guard.service';
         UserService,
         UserAdminGuard,
         UserLoggedInGuard,
-        UserNotLoggedInGuard
+        UserNotLoggedInGuard,
+        QuestionsStartedGuard
     ]
 })
 export class MainModule { }

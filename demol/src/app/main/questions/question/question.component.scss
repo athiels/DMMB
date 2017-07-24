@@ -1,0 +1,35 @@
+@import 'src/styles/_variables.scss';
+
+h1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-height: 30vh;
+    padding: 5vh 0;
+    margin-bottom: 0;
+    font-size: 5vh;
+}
+
+form {
+    height: 70vh;
+    padding-bottom: 15vh;
+
+    h3 {
+        font-size: 4vh;
+        
+        &.selected {
+            background-color: $green;
+        }
+    }
+
+    .button {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 2vh;
+        width: 60%;
+        margin: auto;
+        background-color: white;
+        color: black;
+    }
+}

@@ -1,4 +1,7 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+
+import { QuestionsService } from '../questions.service';
 
 @Component({
     selector: 'dmmb-start',
@@ -6,5 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class StartComponent {
-    constructor() { }
+    constructor(private questionsService: QuestionsService,
+        private router: Router) { }
+
+    start() {
+        this.questionsService.start();
+        this.router.navigate(['/questions/question/0']);
+    }
 }

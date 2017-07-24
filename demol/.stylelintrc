@@ -43,7 +43,6 @@
             }
         ],
         "selector-attribute-quotes": "always",
-        "selector-no-id": true,
         "selector-no-qualifying-type": [
             true,
             {

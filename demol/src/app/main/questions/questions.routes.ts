@@ -2,6 +2,7 @@ import { Route, Routes } from '@angular/router';
 
 import { QuestionsComponent } from './questions.component';
 import { QuestionComponent } from './question/question.component';
+import { QuestionsStartedGuard } from './questions-started-guard.service';
 import { StartComponent } from './start/start.component';
 import { UserLoggedInGuard } from '../user/user-logged-in-guard.service';
 
@@ -28,7 +29,8 @@ export class QuestionsRoutes {
             },
             {
                 path: 'question/:id',
-                component: QuestionComponent
+                component: QuestionComponent,
+                canActivate: [QuestionsStartedGuard]
             }
         ],
         canActivate: [UserLoggedInGuard]

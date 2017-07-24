@@ -9,24 +9,44 @@ import { Question } from './question.model';
 @Injectable()
 export class QuestionsService {
 
-    private questions: Question[];
+    private questions = new Array<Question>();
+    private answers = new Array<Number>();
     private startTime;
+    private questionIndex;
 
     constructor(private http: Http) { }
 
     start() {
+        this.questionIndex = 0;
         this.startTime = moment();
     }
 
-    stop(name, responses) {
-        return this.http.get('/api/questionRound').subscribe(
+    hasStarted() {
+        return Boolean(this.startTime);
+    }
+
+    next() {
+        this.questionIndex++;
+        if (!this.isValidQuestion()) {
+            return null;
+        }
+        return this.questionIndex;
+    }
+
+    answer(answer) {
+        this.answers.push(answer);
+    }
+
+    stop() {
+        return this.http.get('/api/questionRound').flatMap(
             res => {
+                const name = "Xavier";
                 const round = res.json().round;
 
                 const payload = {
                     name: name,
                     time: moment().diff(this.startTime),
-                    responses: responses,
+                    responses: this.answers,
                     questionsRound: round
                 };
 
@@ -34,18 +54,19 @@ export class QuestionsService {
             });
     }
 
-    getQuestions() {
-        if (!this.questions) {
-            console.log('get questions');
-            return this.http.get('/api/questions')
-                .map(this.mapQuestions)
-        }
+    private isValidQuestion() {
+        return this.questionIndex <= this.questions.length - 1;
     }
 
-    getQuestion(index) {
-        console.log('get local question');
-        console.log(this.questions);
-        return this.questions[index];
+    getQuestions() {
+        return this.http.get('/api/questions')
+            .map(this.mapQuestions);
+    }
+
+    getQuestion() {
+        console.log(this.questionIndex);
+        console.log(this.questions[this.questionIndex]);
+        return this.questions[this.questionIndex];
     }
 
     private mapQuestions = res => {
