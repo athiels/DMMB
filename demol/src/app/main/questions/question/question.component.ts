@@ -21,6 +21,7 @@ export class QuestionComponent {
         private questionsService: QuestionsService) {
             this.route.params.subscribe(() => {
                 this.question = this.questionsService.getQuestion();
+                this.selectedAnswer = -1;
             });
     }
 

@@ -6,6 +6,7 @@ import { QuestionComponent } from './question/question.component';
 import { QuestionsStartedGuard } from './questions-started-guard.service';
 import { StartComponent } from './start/start.component';
 import { UserLoggedInGuard } from '../user/user-logged-in-guard.service';
+import { UserNoAdminGuard } from '../user/user-no-admin-guard.service';
 
 export class QuestionsRoutes {
 
@@ -38,7 +39,7 @@ export class QuestionsRoutes {
                 component: EndComponent
             },
         ],
-        canActivate: [UserLoggedInGuard]
+        canActivate: [UserLoggedInGuard, UserNoAdminGuard]
     };
 
     static routes: Routes = [
