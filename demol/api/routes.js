@@ -13,6 +13,11 @@ function getQuestionRound() {
         questionRound = obj;
     });
 }
+
+function handleError(res, err) {
+	res.status(500).send(err);
+}
+
 router.get('/questionRound', function (req, res) {
     res.setHeader('Content-Type', 'application/json');
     res.send(questionRound);
@@ -21,11 +26,15 @@ router.get('/questions', function (req, res) {
     var fs = require('fs');
     var obj;
     fs.readFile('QuestionFile/QuestionFile' + questionRound.round + '.json', 'utf8', function (err, data) {
-        if (err) throw err;
-        obj = JSON.parse(data);
-        //console.log(obj);
-        res.setHeader('Content-Type', 'application/json');
-        res.send(obj);
+        if (err) {
+			handleError(res, err);
+		}
+		else {
+			obj = JSON.parse(data);
+			//console.log(obj);
+			res.setHeader('Content-Type', 'application/json');
+			res.send(obj);
+		}
     });
 });
 router.post('/questionrounddone', function (req, res) {
@@ -50,10 +59,10 @@ router.post('/responses', function (req, res) {
     var responses = resp.responses;
     var questionsRound = resp.questionsRound;
     var responsesFile = {
-        "name": name
-        , "questionsRound": questionsRound
-        , "time": time
-        , "responses": responses
+        "name": name,
+		"questionsRound": questionsRound,
+		"time": time,
+		"responses": responses
     }
     var json = JSON.stringify(responsesFile);
     var fs = require('fs');
@@ -69,11 +78,15 @@ router.get('/elimination', function (req, res) {
     var fs = require('fs');
     var obj;
     fs.readFile('Elimination/EliminationFile.json', 'utf8', function (err, data) {
-        if (err) throw err;
-        obj = JSON.parse(data);
-        console.log(obj);
-        res.setHeader('Content-Type', 'application/json');
-        res.send(obj);
+        if (err) {
+			handleError(res, err);
+		}
+		else {
+			obj = JSON.parse(data);
+			console.log(obj);
+			res.setHeader('Content-Type', 'application/json');
+			res.send(obj);
+		}
     });
 });
 module.exports = router;

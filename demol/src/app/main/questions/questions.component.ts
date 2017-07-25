@@ -10,16 +10,9 @@ import { QuestionsService } from './questions.service';
 
 export class QuestionsComponent implements OnInit {
 
-    private questions: Question[];
-
     constructor(private questionsService: QuestionsService) { }
 
-    public ngOnInit() {
-        this.questionsService.getQuestions().subscribe(
-            (questions) => {
-                this.questions = questions;
-                console.log(this.questions);
-            }
-        )
+    ngOnInit() {
+        this.questionsService.getQuestions().subscribe();
     }
 }

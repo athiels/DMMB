@@ -1,15 +1,25 @@
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { Question } from './question.model';
+import { QuestionComponent } from './question/question.component';
 import { QuestionsComponent } from './questions.component';
 import { QuestionsService } from './questions.service';
+import { StartComponent } from './start/start.component';
 
 @NgModule({
-    imports: [],
+    imports: [
+        CommonModule,
+        FormsModule,
+        RouterModule
+    ],
     exports: [],
     declarations: [
-        QuestionsComponent
-    ],
-    providers: [QuestionsService],
+        QuestionsComponent,
+        QuestionComponent,
+        StartComponent
+    ]
 })
 export class QuestionsModule { }

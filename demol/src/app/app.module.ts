@@ -10,6 +10,7 @@ import { LoginModule } from './main/login/login.module';
 import { MainModule } from 'app/main/main.module';
 import { EliminationModule } from 'app/main/elimination/elimination.module';
 import { QuestionsModule } from './main/questions/questions.module';
+import { QuestionsService } from './main/questions/questions.service';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,7 @@ import { QuestionsModule } from './main/questions/questions.module';
         QuestionsModule,
         AppRoutingModule
     ],
-    providers: [],
+    providers: [QuestionsService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
