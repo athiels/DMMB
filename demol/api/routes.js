@@ -36,17 +36,17 @@ router.get('/questions', function (req, res) {
         }
     });
 });
-router.post('/questionrounddone', function (req, res) {
-    var resp = req.body;
+router.get('/questionrounddone', function (req, res) {
+    var resp = req.query;
     console.log(resp);
     var fs = require('fs');
     var file = "./ResponseFiles/" + resp.name + resp.questionsRound + ".json";
     console.log(file);
-    if (fs.existsSync(file)) {
+    if (!fs.existsSync(file)) {
         res.status(200).send();
     }
     else {
-        res.status(550).send();
+        handleError(res, null);
     }
 });
 router.post('/responses', function (req, res) {
@@ -70,8 +70,15 @@ router.post('/responses', function (req, res) {
         console.log("Creating ResponseFiles dir...");
         fs.mkdirSync(dir);
     }
-    fs.writeFile("ResponseFiles/" + name + questionsRound + '.json', json, 'utf8');
-    res.status(200).send();
+    fs.writeFile("ResponseFiles/" + name + questionsRound + '.json', json, 'utf8', function(err) {
+ 		if (err) {
+ 			handleError(res, err);
+ 		}
+ 		else {
+ 			console.log('The file has been saved!');
+ 			res.status(200).send();
+ 		}
+	});
 });
 router.get('/elimination', function (req, res) {
     var fs = require('fs');

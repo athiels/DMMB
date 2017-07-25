@@ -21,6 +21,7 @@ export class QuestionComponent {
         private questionsService: QuestionsService) {
             this.route.params.subscribe(() => {
                 this.question = this.questionsService.getQuestion();
+                this.selectedAnswer = -1;
             });
     }
 
@@ -44,7 +45,7 @@ export class QuestionComponent {
         }
         else {
             this.questionsService.stop().subscribe(() => {
-                this.router.navigate(['']);
+                this.router.navigate(['questions/end']);
             });
         }
     }
