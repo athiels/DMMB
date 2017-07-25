@@ -12,15 +12,12 @@ import { QuestionsService } from '../questions.service';
 export class StartComponent {
 
     constructor(private questionsService: QuestionsService,
-        private router: Router) {}
+        private router: Router) { }
 
     ngOnInit() {
         this.questionsService.hasCompleted()
-            .catch(() => {
-                this.router.navigate(['/questions/end', { done: true }])
-                return null;
-            })
-            .subscribe();
+            .subscribe(() => { },
+            () => this.router.navigate(['/questions/end', { done: true }]));
     }
 
     start() {
