@@ -10,7 +10,7 @@ import { Question } from './question.model';
 export class QuestionsService {
 
     private questions = new Array<Question>();
-    private answers = new Array<Number>();
+    private answers;
     private startTime;
     private questionIndex;
 
@@ -26,15 +26,16 @@ export class QuestionsService {
     }
 
     next() {
-        this.questionIndex++;
-        if (!this.isValidQuestion()) {
-            return null;
-        }
+        this.questionIndex = Math.min(this.questions.length - 1, this.questionIndex + 1);
         return this.questionIndex;
     }
 
+    isLast() {
+        return this.questionIndex === this.questions.length - 1;
+    }
+
     answer(answer) {
-        this.answers.push(answer);
+        this.answers[this.questionIndex] = answer;
     }
 
     stop() {
@@ -54,10 +55,6 @@ export class QuestionsService {
             });
     }
 
-    private isValidQuestion() {
-        return this.questionIndex <= this.questions.length - 1;
-    }
-
     getQuestions() {
         return this.http.get('/api/questions')
             .map(this.mapQuestions);
@@ -72,6 +69,7 @@ export class QuestionsService {
         this.questions =  _.map(questions, question => {
             return Question.fromDto(question);
         });
+        this.answers = new Array<Number>(this.questions.length);
     }
 
     private mapRound = res => {

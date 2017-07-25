@@ -1,5 +1,6 @@
 import { Route, Routes } from '@angular/router';
 
+import { EndComponent } from './end/end.component';
 import { QuestionsComponent } from './questions.component';
 import { QuestionComponent } from './question/question.component';
 import { QuestionsStartedGuard } from './questions-started-guard.service';
@@ -31,7 +32,12 @@ export class QuestionsRoutes {
                 path: 'question/:id',
                 component: QuestionComponent,
                 canActivate: [QuestionsStartedGuard]
-            }
+            },
+            {
+                path: 'end',
+                component: EndComponent,
+                canActivate: [QuestionsStartedGuard]
+            },
         ],
         canActivate: [UserLoggedInGuard]
     };
