@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
+import { EndComponent } from './end/end.component';
 import { Question } from './question.model';
 import { QuestionComponent } from './question/question.component';
 import { QuestionsComponent } from './questions.component';
@@ -17,6 +18,7 @@ import { StartComponent } from './start/start.component';
     ],
     exports: [],
     declarations: [
+        EndComponent,
         QuestionsComponent,
         QuestionComponent,
         StartComponent

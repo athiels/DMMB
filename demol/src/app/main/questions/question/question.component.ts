@@ -38,8 +38,8 @@ export class QuestionComponent {
 
     next() {
         this.questionsService.answer(this.selectedAnswer);
-        const questionIndex = this.questionsService.next();
-        if (questionIndex) {
+        if (!this.questionsService.isLast()) {
+            const questionIndex = this.questionsService.next();
             this.router.navigate([`questions/question/${questionIndex}`]);
         }
         else {
