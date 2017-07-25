@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/Rx';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -13,7 +14,13 @@ export class StartComponent {
         private router: Router) { }
 
     start() {
-        this.questionsService.start();
-        this.router.navigate(['/questions/question/0']);
+        this.questionsService.hasCompleted()
+            .subscribe(() => {
+                this.questionsService.start();
+                this.router.navigate(['/questions/question/0']);
+            },
+            () => {
+                this.router.navigate(['/questions/end', { done: true }]);
+            });
     }
 }

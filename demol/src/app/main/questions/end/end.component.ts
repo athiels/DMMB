@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,6 +6,17 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: 'end.component.html'
 })
 
-export class EndComponent {
-    constructor() { }
+export class EndComponent implements OnInit {
+
+    done = false;
+
+    constructor(private route: ActivatedRoute) { }
+
+    ngOnInit() {
+        const param = this.route.snapshot.params['done'];
+        if (param) {
+            this.done = JSON.parse(param);
+        }
+    }
+
 }

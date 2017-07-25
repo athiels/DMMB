@@ -35,8 +35,7 @@ export class QuestionsRoutes {
             },
             {
                 path: 'end',
-                component: EndComponent,
-                canActivate: [QuestionsStartedGuard]
+                component: EndComponent
             },
         ],
         canActivate: [UserLoggedInGuard]

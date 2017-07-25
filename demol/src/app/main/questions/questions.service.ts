@@ -1,8 +1,9 @@
+import { Observable } from 'rxjs/Rx';
 import * as _ from 'lodash';
 import * as moment from 'moment';
 
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, URLSearchParams } from '@angular/http';
 
 import { Question } from './question.model';
 
@@ -64,12 +65,25 @@ export class QuestionsService {
         return this.questions[this.questionIndex];
     }
 
+    hasCompleted() {
+        const params = new URLSearchParams();
+        params.append('name', 'Xavier');
+
+        return this.http.get('/api/questionrounddone', { search: params })
+            .map(this.mapRoundComplete)
+            .catch(() => Observable.throw('error'))
+    }
+
     private mapQuestions = res => {
         const questions = res.json();
-        this.questions =  _.map(questions, question => {
+        this.questions = _.map(questions, question => {
             return Question.fromDto(question);
         });
         this.answers = new Array<Number>(this.questions.length);
+    }
+
+    private mapRoundComplete = res => {
+        return res.json();
     }
 
     private mapRound = res => {

@@ -44,7 +44,7 @@ export class QuestionComponent {
         }
         else {
             this.questionsService.stop().subscribe(() => {
-                this.router.navigate(['']);
+                this.router.navigate(['questions/end']);
             });
         }
     }
