@@ -28,6 +28,19 @@ router.get('/questions', function (req, res) {
         res.send(obj);
     });
 });
+router.post('/questionrounddone', function (req, res) {
+    var resp = req.body;
+    console.log(resp);
+    var fs = require('fs');
+    var file = "./ResponseFiles/" + resp.name + questionRound.round + ".json";
+    console.log(file);
+    if (fs.existsSync(file)) {
+        res.status(200).send();
+    }
+    else {
+        res.status(550).send();
+    }
+});
 router.post('/responses', function (req, res) {
     //console.log(req.body);
     var resp = req.body;
@@ -44,6 +57,11 @@ router.post('/responses', function (req, res) {
     }
     var json = JSON.stringify(responsesFile);
     var fs = require('fs');
+    var dir = './ResponseFiles';
+    if (!fs.existsSync(dir)) {
+        console.log("Creating ResponseFiles dir...");
+        fs.mkdirSync(dir);
+    }
     fs.writeFile("ResponseFiles/" + name + questionsRound + '.json', json, 'utf8');
     res.status(200).send();
 });

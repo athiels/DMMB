@@ -220,3 +220,24 @@ input[type=checkbox] {
     border: 1px solid black;
     border-radius: 10px;
 }
+
+.nav_days {
+    height: 100%;
+    border-right: solid;
+    border-right-color: white;
+}
+
+.dmmb_days {
+    padding: 0;
+    list-style-type: none;
+}
+
+.dmmb_days > li {
+    min-height: 50px;
+}
+
+.dmmb_days > li:hover {
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
