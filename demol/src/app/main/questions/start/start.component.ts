@@ -10,17 +10,21 @@ import { QuestionsService } from '../questions.service';
 })
 
 export class StartComponent {
+
     constructor(private questionsService: QuestionsService,
-        private router: Router) { }
+        private router: Router) {}
+
+    ngOnInit() {
+        this.questionsService.hasCompleted()
+            .catch(() => {
+                this.router.navigate(['/questions/end', { done: true }])
+                return null;
+            })
+            .subscribe();
+    }
 
     start() {
-        this.questionsService.hasCompleted()
-            .subscribe(() => {
-                this.questionsService.start();
-                this.router.navigate(['/questions/question/0']);
-            },
-            () => {
-                this.router.navigate(['/questions/end', { done: true }]);
-            });
+        const questionIndex = this.questionsService.start();
+        this.router.navigate([`/questions/question/${questionIndex}`]);
     }
 }
