@@ -64,8 +64,6 @@ export class QuestionsService {
     }
 
     getQuestion() {
-        console.log(this.questionIndex);
-        console.log(this.questions[this.questionIndex]);
         return this.questions[this.questionIndex];
     }
 

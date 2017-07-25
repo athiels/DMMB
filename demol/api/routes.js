@@ -13,6 +13,11 @@ function getQuestionRound() {
         questionRound = obj;
     });
 }
+
+function handleError(res, err) {
+	res.status(500).send(err);
+}
+
 router.get('/questionRound', function (req, res) {
     res.setHeader('Content-Type', 'application/json');
     res.send(questionRound);
@@ -21,11 +26,15 @@ router.get('/questions', function (req, res) {
     var fs = require('fs');
     var obj;
     fs.readFile('QuestionFile/QuestionFile' + questionRound.round + '.json', 'utf8', function (err, data) {
-        if (err) throw err;
-        obj = JSON.parse(data);
-        //console.log(obj);
-        res.setHeader('Content-Type', 'application/json');
-        res.send(obj);
+        if (err) {
+			handleError(res, err);
+		}
+		else {
+			obj = JSON.parse(data);
+			//console.log(obj);
+			res.setHeader('Content-Type', 'application/json');
+			res.send(obj);
+		}
     });
 });
 router.post('/responses', function (req, res) {
@@ -37,25 +46,36 @@ router.post('/responses', function (req, res) {
     var responses = resp.responses;
     var questionsRound = resp.questionsRound;
     var responsesFile = {
-        "name": name
-        , "questionsRound": questionsRound
-        , "time": time
-        , "responses": responses
+        "name": name,
+		"questionsRound": questionsRound,
+		"time": time,
+		"responses": responses
     }
     var json = JSON.stringify(responsesFile);
     var fs = require('fs');
-    fs.writeFile("ResponseFiles/" + name + questionsRound + '.json', json, 'utf8');
-    res.status(200).send();
+    fs.writeFile("ResponseFiles/" + name + questionsRound + '.json', json, 'utf8', function(err) {
+		if (err) {
+			handleError(res, err);
+		}
+		else {
+			console.log('The file has been saved!');
+			res.status(200).send();
+		}
+	});
 });
 router.get('/elimination', function (req, res) {
     var fs = require('fs');
     var obj;
     fs.readFile('Elimination/EliminationFile.json', 'utf8', function (err, data) {
-        if (err) throw err;
-        obj = JSON.parse(data);
-        console.log(obj);
-        res.setHeader('Content-Type', 'application/json');
-        res.send(obj);
+        if (err) {
+			handleError(res, err);
+		}
+		else {
+			obj = JSON.parse(data);
+			console.log(obj);
+			res.setHeader('Content-Type', 'application/json');
+			res.send(obj);
+		}
     });
 });
 module.exports = router;

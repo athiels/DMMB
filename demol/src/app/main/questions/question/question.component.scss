@@ -16,20 +16,26 @@ form {
 
     h3 {
         font-size: 4vh;
-        
+
         &.selected {
             background-color: $green;
         }
     }
 
-    .button {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 2vh;
-        width: 60%;
-        margin: auto;
-        background-color: white;
-        color: black;
+    .row {
+        .col-12 {
+            padding: 0;
+        }
     }
+}
+
+.button {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2vh;
+    width: 60%;
+    margin: auto;
+    background-color: white;
+    color: black;
 }
