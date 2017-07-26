@@ -1,56 +1,65 @@
 @import 'src/styles/_variables.scss';
 
+html,
+body {
+    height: 100%;
+}
+
 body {
     background: #000;
     color: #fff;
     font-family: 'Knockout';
 }
 
-.page-container {
-    height: 100vh;
-    margin: 0 -15px;
+.container-fluid {
+    height: 100%;
 
-    .page {
+    .page-container {
         height: 100%;
-        font-size: 4rem;
-        text-align: center;
+        margin: 0 -15px;
 
-        &.page-center {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+        .page {
+            height: 100%;
+            font-size: 4rem;
+            text-align: center;
 
-        &.page-fade {
-            background-image: -moz-linear-gradient(top, #000000 0%, #000000 80%, $green 100%);
-            background-image: -webkit-linear-gradient(top, #000000 0%, #000000 80%, $green 100%);
-            background-image: linear-gradient(to bottom, #000000 0%, #000000 80%, $green 100%);
-        }
+            &.page-center {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
 
-        .page-icon {
-            position: absolute;
-            top: 20px;
-            right: 10px;
-            width: 20%;
-            height: 20%;
-            background-image: url(/assets/images/logo.png);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: right top;
-        }
+            &.page-fade {
+                background-image: -moz-linear-gradient(top, #000000 0%, #000000 80%, $green 100%);
+                background-image: -webkit-linear-gradient(top, #000000 0%, #000000 80%, $green 100%);
+                background-image: linear-gradient(to bottom, #000000 0%, #000000 80%, $green 100%);
+            }
 
-        form {
-            width: 100%;
+            .page-icon {
+                position: absolute;
+                top: 20px;
+                right: 10px;
+                width: 20%;
+                height: 20%;
+                background-image: url(/assets/images/logo.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: right top;
+            }
 
-            input {
-                border: none;
-                background-color: transparent;
-                color: white;
-                font-family: 'Knockout';
-                border-bottom: 2px solid $green;
-                outline: none;
-                line-height: 10px;
+            form {
+                width: 100%;
+
+                input {
+                    border: none;
+                    background-color: transparent;
+                    color: white;
+                    font-family: 'Knockout';
+                    border-bottom: 2px solid $green;
+                    outline: none;
+                    line-height: 10px;
+                }
             }
         }
     }
