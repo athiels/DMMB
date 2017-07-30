@@ -43,20 +43,15 @@ export class QuestionsService {
     }
 
     stop() {
-        return this.http.get('/api/questionRound').flatMap(
-            res => {
-                const name = this.userService.getUsername();
-                const round = res.json().round;
+        const name = this.userService.getUsername();
 
-                const payload = {
-                    name: name,
-                    time: moment().diff(this.startTime),
-                    responses: this.answers,
-                    questionsRound: round
-                };
+        const payload = {
+            name: name,
+            time: moment().diff(this.startTime),
+            responses: this.answers
+        };
 
-                return this.http.post('/api/responses', payload);
-            });
+        return this.http.post('/api/responses', payload);
     }
 
     getQuestions() {
