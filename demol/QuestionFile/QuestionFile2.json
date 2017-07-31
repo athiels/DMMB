@@ -1,0 +1,30 @@
+[
+    {
+        "question": "De mol is een"
+        , "responses": ["Man", "Vrouw"]
+	}
+    , {
+        "question": "Hoeveel minuten heeft de mol gewatertrappeld tijdens de 'Nonogram'-proef?"
+        , "responses": ["0", "10", "20", "30", "40"]
+	}
+    , {
+        "question": "Wat waren de 2 nummers van de mol bij de 'meer in de juiste volgorde'-proef?"
+        , "responses": ["3 – 13", "1 - 12", "8 - 9", "4 - 15", "6 - 11", "2 - 14", "5 - 16", "7 - 10"]
+	}
+    , {
+        "question": "Wat was de juiste volgorde bij de 'meer in de juiste volgorde'-proef?"
+        , "responses": ["Nils – Sam – Karolien – Xavier – Yannick – Laura – Jens – Matthias", "Nils – Karolien – Sam – Jens – Matthias – Laura – Xavier – Yannick", "Karolien – Matthias – Nils – Xavier – Jens – Laura – Yannick – Sam", "Xavier – Jens - Karolien – Laura – Matthias – Yannick – Nils – Sam"]
+	}
+    , {
+        "question": "Als hoeveelste kandidaat is de mol naar de overkant gegaan tijdens de 'Meer in de juiste volgorde'-proef?"
+        , "responses": ["Eerste", "Tweede", "Derde", "Vierde", "Vijfde", "Zesde", "Zevende", "Achtste"]
+	}
+    , {
+        "question": "Welke spreuk werd gestart door de mol?"
+        , "responses": ["De kat trap de trollen van de trap", "Vaders vader vond vier vuile vesten van vier vuile venten", "Drie dikke drilboren drillen door drie dikke deuren", "De vliegende vieze vis vliegt de vogel achterna", "Drink geen vermouth als je vermoedt dat je nog ver moet", "Als een potvis in een pispot pist, heb je een pispot vol potvispis", "Als jouw tekkel mijn tekkel tackelt, tackelt mijn tekkel jouw tekkel terug", "Als echtparen echt paren hebben echtgenoten echt genoten"]
+	}
+    , {
+        "question": "Wie is de mol?"
+        , "responses": ["Matthias", "Laura", "Sam", "Xavier", "Karolien", "Jens", "Yannick", "Nils"]
+    }
+]

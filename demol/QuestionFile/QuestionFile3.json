@@ -1,0 +1,30 @@
+[
+    {
+        "question": "De mol is een"
+        , "responses": ["Man", "Vrouw"]
+	}
+    , {
+        "question": "Wat dronk de mol op het terras tijdens de 'Frankrijkpuzzel'-proef?"
+        , "responses": ["Blond bier", "Donker bier", "Blond en Donker bier", "Iets anders dan bier"]
+	}
+    , {
+        "question": "Hoeveel km² bestrijkt de gletsjer Mer de Glace?"
+        , "responses": ["11", "15", "22", "27", "31", "34", "41"]
+	}
+    , {
+        "question": "Hoeveel pasvragen heeft de mol vandaag genomen tijdens de 'Pasvragenzak'-proef?"
+        , "responses": ["0", "1", "2", "3", "4", "5", "6"]
+	}
+    , {
+        "question": "Als hoeveelste kandidaat ging de mol naar binnen bij de 'Pasvragenzak'-proef?"
+        , "responses": ["Eerste", "Tweede", "Derde", "Vierde", "Vijfde", "Zesde", "Zevende", "Achtste"]
+	}
+    , {
+        "question": "Hoeveel keer is de mol al in Chamonix geweest?"
+        , "responses": ["1", "2", "3", "4", "5"]
+	}
+    , {
+        "question": "Wie is de mol?"
+        , "responses": ["Jens", "Laura", "Sam", "Xavier", "Karolien", "Matthias", "Yannick", "Nils"]
+    }
+]

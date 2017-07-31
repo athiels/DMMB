@@ -1,10 +1,33 @@
 [
-	{
-		"question": "De mol is een",
-		"responses": ["Man", "Vrouw"]
-	},
-	{
-		"question": "Als hoeveelste is de mol de AnimalSelfie gaan trekken?",
-		"responses": ["Eerste", "Tweede", "Derde", "Vierde", "Vijfde", "Zesde", "Zevende", "Achtste"]
+    {
+        "question": "De mol is een"
+        , "responses": ["Man", "Vrouw"]
 	}
+    , {
+        "question": "Heeft de mol de woordzoeker-proef gesaboteerd?"
+        , "responses": ["Ja", "Neen"]
+	}
+    , {
+        "question": "Als hoeveelste kandidaat heeft de mol de Animal-selfie genomen?"
+        , "responses": ["Eerste", "Tweede", "Derde", "Vierde", "Vijfde", "Zesde", "Zevende", "Achtste"]
+	}
+    , {
+        "question": "Heeft de mol vandaag een pasvraag veroverd?"
+        , "responses": ["Ja", "Neen"]
+	}
+
+    , {
+        "question": "Hoeveel euro heeft de mol verzameld tijdens de 'Memory-Mol'-proef?"
+        , "responses": ["0", "10", "25", "50", "100", "250"]
+	}
+
+    , {
+        "question": "Hoeveel bekers heeft de mol omver geschoten tijdens de 'katapult'-proef?"
+        , "responses": ["0", "1", "2", "3", "4", "5", "6", "7"]
+	}
+
+    , {
+        "question": "Wie is de mol?"
+        , "responses": ["Xavier", "Nils", "Sam", "Matthias", "Yannick", "Jens", "Karolien", "Laura"]
+    }
 ]
