@@ -6,7 +6,8 @@ import { QuestionsService } from '../questions.service';
 
 @Component({
     selector: 'dmmb-start',
-    templateUrl: 'start.component.html'
+    templateUrl: 'start.component.html',
+    styleUrls: ['start.component.scss']
 })
 
 export class StartComponent {

@@ -15,6 +15,7 @@ export class QuestionsService {
     private answers;
     private startTime;
     private questionIndex;
+    private stopped;
 
     constructor(private http: Http,
         private userService: UserService) { }
@@ -22,11 +23,16 @@ export class QuestionsService {
     start() {
         this.questionIndex = 0;
         this.startTime = moment();
+        this.stopped = false;
         return this.questionIndex;
     }
 
     hasStarted() {
         return Boolean(this.startTime);
+    }
+
+    hasStopped() {
+        return this.stopped;
     }
 
     next() {
@@ -43,6 +49,7 @@ export class QuestionsService {
     }
 
     stop() {
+        this.stopped = true;
         const name = this.userService.getUsername();
 
         const payload = {
@@ -67,7 +74,10 @@ export class QuestionsService {
         const params = new URLSearchParams();
         params.append('name', this.userService.getUsername());
 
-        return this.http.get('/api/questionrounddone', { search: params });
+        return this.http.get('/api/questionrounddone', { search: params }).catch((e) => {
+            this.stopped = true;
+            return Observable.throw(e);
+        });
     }
 
     private mapQuestions = res => {

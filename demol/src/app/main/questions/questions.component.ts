@@ -15,4 +15,12 @@ export class QuestionsComponent implements OnInit {
     ngOnInit() {
         this.questionsService.getQuestions().subscribe();
     }
+
+    hasStarted() {
+        return this.questionsService.hasStarted();
+    }
+
+    hasStopped() {
+        return this.questionsService.hasStopped();
+    }
 }

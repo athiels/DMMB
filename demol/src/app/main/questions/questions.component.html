@@ -1,3 +1,3 @@
-<div class="page page-fade">
+<div class="page page-fade" [class.page-center]="!hasStarted() || hasStopped()">
     <router-outlet></router-outlet>
 </div>

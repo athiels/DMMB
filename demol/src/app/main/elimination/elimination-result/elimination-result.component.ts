@@ -20,7 +20,7 @@ export class EliminationResultComponent implements OnInit {
 
     result = '';
     
-    private goBackTimer = 3000;
+    private goBackTimer = 15000;
 
     constructor(private route: ActivatedRoute,
         private router: Router) { }
@@ -31,7 +31,11 @@ export class EliminationResultComponent implements OnInit {
     }
 
     onAnimationEnd() {
-        setTimeout(() => this.router.navigate(['elimination']), this.goBackTimer);
+        setTimeout(() => this.goBack(), this.goBackTimer);
+    }
+
+    goBack() {
+        this.router.navigate(['elimination']);
     }
 
     private animate(eliminated) {
