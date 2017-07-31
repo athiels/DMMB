@@ -8,7 +8,7 @@ export class Question {
         let question = new Question();
 
         question.question = dto.question;
-        question.answers = dto.responses.concat(new Array(8 - dto.responses.length));
+        question.answers = dto.responses.concat(new Array(Math.max(dto.responses.length, 8) - dto.responses.length));
 
         return question;
     }
